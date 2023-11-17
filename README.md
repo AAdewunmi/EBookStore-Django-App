@@ -18,4 +18,12 @@ Book Store E Commerce App
 
 ## 6. Adapted from: 
 
+Project Name: Django Ecommerce Projectv1 2021.
+
+Created by: Very Academy
+
+Last updated: 01/02/2021
+
+URL: https://www.youtube.com/watch?v=UqSJCVePEWU&list=PLOLrQ9Pn6caxY4Q1U9RjO1bulQp5NDYS_
+
 
