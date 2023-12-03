@@ -14,6 +14,10 @@ class TestCategoriesModel(TestCase):
         """
         data = self.data1
         self.assertTrue(isinstance(data, Category))
+        self.assertEqual(str(data), 'django')
+
+class TestProductsModel(TestCase):
+    
     
 
 
