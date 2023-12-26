@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
 
+
 # Create your models here.
 class ProductManager(models.Manager):
     def get_queryset(self):

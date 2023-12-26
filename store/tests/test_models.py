@@ -5,6 +5,7 @@ from django.urls import reverse
 # Create your tests here.
 from store.models import Category, Product
 
+
 class TestCategoriesModel(TestCase):
 
     def setUp(self):
