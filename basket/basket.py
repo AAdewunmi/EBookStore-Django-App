@@ -1,3 +1,7 @@
+from decimal import Decimal
+from store.models import Product
+
+
 class Basket():
     """
     A base Basket class, providing some default behaviors that
@@ -19,3 +23,9 @@ class Basket():
             self.basket[product_id]= {'price': str(product.price), 'qty': int(qty)}
 
         self.session.modified = True
+
+    def __len__(self):
+        """
+        Get the basket data and count the qty of items
+        """
+        return sum(item['qty'] for item in self.basket.values())
