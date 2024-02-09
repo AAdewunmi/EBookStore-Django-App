@@ -63,7 +63,7 @@
             type: 'POST',
             url: '{% url "basket:basket_delete" %}',
             data: {
-                productid: $('#delete-button').val(),
+                productid: $(this).data('index'),
                 csrfmiddlewaretoken: "{{csrf_token}}",
                 action: 'post',
             },

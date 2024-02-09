@@ -22,7 +22,7 @@ def basket_add(request):
 def basket_delete(request):
     basket = Basket(request)
     if request.POST.get('action') == 'post':
-        product_id = int(request.POST.get('productid'))
+        product_id = int(float(request.POST.get('productid')))
         basket.delete(product=product_id)
 
         basketqty = basket.__len__()
