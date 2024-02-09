@@ -56,4 +56,22 @@
     </div>
   </div>
 </main>
+<script>
+    $(document).on('click', '#delete-button', function (e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: '{% url "basket:basket_delete" %}',
+            data: {
+                productid: $('#add-button').val(),
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post',
+            },
+            success: function (json){
+               
+            },
+            error: function(xhr, errmsg, err){}
+        });
+    });
+</script>
 {% endblock %}
