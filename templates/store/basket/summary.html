@@ -70,6 +70,7 @@
             },
             success: function (json){
                 $('.product-item[data-index="' + prodid + '"]').remove();
+                document.getElementById("subtotal").innerHTML = json.subtotal;
             },
             error: function(xhr, errmsg, err){}
         });
