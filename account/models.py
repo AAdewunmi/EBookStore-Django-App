@@ -2,6 +2,10 @@ from django.db import models
 import django.contrib.auth.models import (AbstractBaseUser, BaseUserManager,PermissionsMixin)
 from django_countries.fields import CountryField
 # Create your models here.
+class CustomAccountManager(BaseUserManager):
+
+   
+
 class UserBase(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(_('email address'), unique=True)
     user_name = models.CharField(max_length=150, unique=True)
@@ -32,3 +36,4 @@ class UserBase(AbstractBaseUser, PermissionsMixin):
 
     def __str__(self):
         return self.user_name
+    
