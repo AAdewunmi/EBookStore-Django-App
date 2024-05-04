@@ -38,3 +38,14 @@ class RegistrationForm(forms.ModelForm):
             raise forms.ValidationError(
                 'Please use another Email, that is already taken')
         return email
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['user_name'].widget.attrs.update(
+            {'class': 'form-control mb-3', 'placeholder': 'Username'})
+        self.fields['email'].widget.attrs.update(
+            {'class': 'form-control mb-3', 'placeholder': 'E-mail', 'name': 'email', 'id': 'id_email'})
+        self.fields['password'].widget.attrs.update(
+            {'class': 'form-control mb-3', 'placeholder': 'Password'})
+        self.fields['password2'].widget.attrs.update(
+            {'class': 'form-control', 'placeholder': 'Repeat Password'})
