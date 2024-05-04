@@ -25,3 +25,9 @@ class RegistrationForm(forms.ModelForm):
         if r.count():
             raise forms.ValidationError("Username already exists")
         return user_name
+    
+    def clean_password2(self):
+        cd = self.cleaned_data
+        if cd['password'] != cd['password2']:
+            raise forms.ValidationError('Passwords do not match.')
+        return cd['password2']
