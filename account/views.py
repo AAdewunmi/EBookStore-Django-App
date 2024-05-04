@@ -1,12 +1,16 @@
 from django.shortcuts import redirect, render
-from django.contrib.sites.shortcuts import get_current_site
-from django.template.loader import render_to_string
-from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-from django.utils.encoding import force_bytes
 from django.http import HttpResponse
-from .tokens import account_activation_token
-# Create your views here.
 from .forms import RegistrationForm
+from .tokens import account_activation_token
+from django.template.loader import render_to_string
+from django.contrib.sites.shortcuts import get_current_site
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
+
+
+
+# Create your views here.
+
 
 def account_register(request):
      
