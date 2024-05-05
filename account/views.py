@@ -12,6 +12,8 @@ from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from .models import UserBase
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
+from .models import UserBase
+from django.shortcuts import redirect
 #from orders.views import user_orders
 
 
@@ -21,7 +23,7 @@ def dashboard(request):
     #orders = user_orders(request)
     return render(request,
                   'account/user/dashboard.html',
-                  {'section': 'profile', 'orders': orders})
+                  {'section': 'profile', 'orders': 'orders'})
 
 def account_register(request):
      
@@ -41,7 +43,7 @@ def account_register(request):
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
-            user.email_user(subject=subject, message=message)
+            #user.email_user(subject=subject, message=message)
             return HttpResponse('registered succesfully and activation sent')
      else:
         registerForm = RegistrationForm()
