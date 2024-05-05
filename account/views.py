@@ -11,11 +11,17 @@ django.utils.encoding.force_text = force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from .models import UserBase
 from django.contrib.auth import login, logout
-
+from django.contrib.auth.decorators import login_required
+#from orders.views import user_orders
 
 
 # Create your views here.
-
+@login_required
+def dashboard(request):
+    #orders = user_orders(request)
+    return render(request,
+                  'account/user/dashboard.html',
+                  {'section': 'profile', 'orders': orders})
 
 def account_register(request):
      
