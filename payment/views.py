@@ -28,3 +28,4 @@ def BasketView(request):
     )
 
     return render(request, 'payment/home.html', {'client_secret': intent.client_secret})
+
