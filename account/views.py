@@ -14,13 +14,13 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from .models import UserBase
 from django.shortcuts import redirect
-#from orders.views import user_orders
+from orders.views import user_orders
 
 
 # Create your views here.
 @login_required
 def dashboard(request):
-    #orders = user_orders(request)
+    orders = user_orders(request)
     return render(request,
                   'account/user/dashboard.html',
                   {'section': 'profile', 'orders': 'orders'})
@@ -64,7 +64,7 @@ def account_register(request):
                 'uid': urlsafe_base64_encode(force_bytes(user.pk)),
                 'token': account_activation_token.make_token(user),
             })
-            #user.email_user(subject=subject, message=message)
+            user.email_user(subject=subject, message=message)
             return HttpResponse('registered succesfully and activation sent')
      else:
         registerForm = RegistrationForm()
