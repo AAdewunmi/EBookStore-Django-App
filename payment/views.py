@@ -50,3 +50,8 @@ def stripe_webhook(request):
         print('Unhandled event type {}'.format(event.type))
 
     return HttpResponse(status=200)
+
+def order_placed(request):
+    basket = Basket(request)
+    basket.clear()
+    return render(request, 'payment/orderplaced.html')
