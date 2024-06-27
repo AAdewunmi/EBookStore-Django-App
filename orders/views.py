@@ -25,3 +25,4 @@ def add(request):
 
         response = JsonResponse({'success': 'Return something'})
         return response
+
