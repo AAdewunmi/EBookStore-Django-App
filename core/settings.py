@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-hd$nplv&w%um10^(m$99dt@5=c(-4*1(u!hnsjc(9yb5cv0x9)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# ALLOWED_HOSTS = ['yourdomain.com', '127.0.0.1', 'localhost']
 ALLOWED_HOSTS = []
 
 
@@ -143,3 +144,8 @@ LOGIN_URL = '/account/login/'
 
 ## Email setting
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+## Stripe payment
+# PUBLISHABLE_KEY = ''
+# SECRET_KEY = ''
+STRIPE_ENDPOINT_SECRET = ''
