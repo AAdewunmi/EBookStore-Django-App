@@ -27,8 +27,9 @@ def BasketView(request):
          metadata={'userid': request.user.id}
     )
 
-    return render(request, 'payment/home.html', {'client_secret': intent.client_secret})
-
+    return render(request, 'payment/payment_form.html', {'client_secret': intent.client_secret})
+    #return render(request, 'payment/payment_form.html', {'client_secret': intent.client_secret, 
+                                                            #'STRIPE_PUBLISHABLE_KEY': os.environ.get('STRIPE_PUBLISHABLE_KEY')})
 @csrf_exempt
 def stripe_webhook(request):
     payload = request.body
