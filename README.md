@@ -9,6 +9,13 @@ Book Store E Commerce App
 - Python
 - Django
 - SQL
+- Stripe Payments API
+
+
+----
+Stripe Payments API: Payment app coded up but Stripe Payments API keys not included!
+----
+
 
 ## 3. What is the MVP?
 
