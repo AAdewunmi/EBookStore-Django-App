@@ -30,4 +30,20 @@ class Category(MPTTModel):
 
     def __str__(self):
         return self.name
+    
+class ProductType(models.Model):
+    """
+    ProductType Table will provide a list of the different types
+    of products that are for sale.
+    """
+
+    name = models.CharField(verbose_name=_("Product Name"), help_text=_("Required"), max_length=255, unique=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = _("Product Type")
+        verbose_name_plural = _("Product Types")
+
+    def __str__(self):
+        return self.name
 
