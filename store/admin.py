@@ -1,4 +1,4 @@
-from django.contrib import admin
+""" from django.contrib import admin
 
 # Register your models here.
 from .models import Category, Product
@@ -16,4 +16,4 @@ class ProductAdmin(admin.ModelAdmin):
                     'in_stock', 'created', 'updated']
     list_filter = ['in_stock', 'is_active']
     list_editable = ['price', 'in_stock']
-    prepopulated_fields = {'slug': ['title']}
+    prepopulated_fields = {'slug': ['title']} """
