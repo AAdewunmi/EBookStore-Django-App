@@ -5,7 +5,8 @@ from .models import Category, Product
 
 
 def product_all(request):
-    products = Product.objects.prefetch_related("product_image").filter(is_active=True)
+    # products = Product.objects.prefetch_related("product_image").filter(is_active=True)
+    products = Product.objects.all();
     return render(request, 'store/index.html', {'products': products})
 
 
