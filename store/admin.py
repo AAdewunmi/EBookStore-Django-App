@@ -24,3 +24,6 @@ class ProductTypeAdmin(admin.ModelAdmin):
 
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
+
+class ProductSpecificationValueInline(admin.TabularInline):
+    model = ProductSpecificationValue
