@@ -15,3 +15,9 @@ admin.site.register(Category, MPTTModelAdmin)
 
 class ProductSpecificationInline(admin.TabularInline):
     model = ProductSpecification
+
+@admin.register(ProductType)
+class ProductTypeAdmin(admin.ModelAdmin):
+    inlines = [
+        ProductSpecificationInline,
+    ]
