@@ -27,3 +27,10 @@ class ProductImageInline(admin.TabularInline):
 
 class ProductSpecificationValueInline(admin.TabularInline):
     model = ProductSpecificationValue
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    inlines = [
+        ProductSpecificationValueInline,
+        ProductImageInline,
+    ]
