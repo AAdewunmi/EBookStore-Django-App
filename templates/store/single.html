@@ -8,7 +8,6 @@
 
 
   <div class="container" style="max-width: 1000px">
-
     <div class="row g-3">
           <div class="alert alert-primary fw600 rounded-0 border-0 py-3" role="alert">
       <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-info-circle me-2"
@@ -28,7 +27,7 @@
             <div class="d-grid gap-2">
 
             <div class="d-flex d-flex-inline justify-content-between">
-            <div><span class="h3">£{{ product.price }}</span><p class="text-muted">includes tax</p></div>
+            <div><span class="h3">£{{ product.regular_price }}</span><p class="text-muted">includes tax</p></div>
                    <div class="">
                                 <label for="select">Qty</label>
                                 <select id="select" class="h6 store-select-dropdown" >
@@ -46,27 +45,28 @@
         </div>
 
         <div class="col-md-7 col-lg-7 p-0">
-
-        
-
             <div class="card mb-3 border-0">
-            <div class="row g-0">
-                <div class="col-md-12">
-                    <div class="card-body p-1">
-                        <h1 class="mb-0 h2 pe-4 pb-4">{{ product.title }}</h1>
-                        <div class="bg-light"><img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ product.image.url }}"> </div>
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-body p-1">
+                            <h1 class="mb-0 h2 pe-4 pb-4">{{ product.title }}</h1>
+                                <div class="bg-light">
+                                    {% for image in product.product_image.all %}
+                                        {% if image.is_feature %}
+                                            <!-- <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ product.image.url }}">  -->
+                                        <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}">
+                                        {% else %}
+                                        <img class="img-fluid d-block-inline pt-3" width="100px" alt="Responsive image" src="{{ image.image.url }}" alt="{{ image.image.alt_text }}">
+                                        {% endif %}
+                                    {% endfor %}    
+                                </div>
+                        </div>
                     </div>
-                    
                 </div>
             </div>
-            </div>
-
-            
-
         </div>
-
     </div>
-  </div>
+</div>
 
 <script>
     $(document).on('click', '#add-button', function (e) {
