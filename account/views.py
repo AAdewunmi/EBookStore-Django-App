@@ -11,7 +11,7 @@ django.utils.encoding.force_text = force_str
 from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
-from .models import Customer
+from .models import Customer, Address
 from django.shortcuts import redirect
 from orders.views import user_orders
 
@@ -82,3 +82,8 @@ def account_activate(request, uidb64, token):
         return redirect('account:dashboard')
     else:
         return render(request, 'account/registration/activation_invalid.html')
+    
+@login_required
+def view_address(request):
+    addresses = Address.objects.filter(customer=request.user)
+    return render(request, "account/dashboard/addresses.html", {"addresses": addresses})
