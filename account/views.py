@@ -1,19 +1,20 @@
-from django.shortcuts import redirect, render
-from django.http import HttpResponse
-from .forms import RegistrationForm, UserEditForm, UserAddressForm
-from .tokens import account_activation_token
-from django.template.loader import render_to_string
+from django.contrib.auth import login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import redirect, render
+from django.urls import reverse
+from django.template.loader import render_to_string
 from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
 import django
 from django.utils.encoding import force_str
 django.utils.encoding.force_text = force_str
-from django.utils.http import urlsafe_base64_decode, urlsafe_base64_encode
-from django.contrib.auth import login, logout
-from django.contrib.auth.decorators import login_required
-from .models import Customer, Address
-from django.shortcuts import redirect
 from orders.views import user_orders
+
+from .forms import RegistrationForm, UserEditForm, UserAddressForm
+from .models import Customer, Address
+from .tokens import account_activation_token
 
 
 # Create your views here.
