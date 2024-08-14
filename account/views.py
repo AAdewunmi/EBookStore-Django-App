@@ -115,3 +115,8 @@ def edit_address(request, id):
         address_form = UserAddressForm(instance=address)
     return render(request, "account/dashboard/edit_addresses.html", {"form": address_form})
 
+@login_required
+def delete_address(request, id):
+    address = Address.objects.filter(pk=id, customer=request.user).delete()
+    return redirect("account:addresses")
+
