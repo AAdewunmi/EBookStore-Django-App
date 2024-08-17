@@ -15,9 +15,14 @@ from orders.views import user_orders
 from .forms import RegistrationForm, UserEditForm, UserAddressForm
 from .models import Customer, Address
 from .tokens import account_activation_token
-
+from store.models import Product
 
 # Create your views here.
+@login_required
+def wishlist(request):
+    products = Product.objects.filter(users_wishlist=request.user)
+    return render(request, "account/dashboard/user_wish_list.html", {"wishlist": products})
+
 @login_required
 def dashboard(request):
     orders = user_orders(request)
