@@ -35,5 +35,5 @@ urlpatterns = [
     path("addresses/set_default/<slug:id>/", views.set_default, name="set_default"), 
     # Wish List
     path("wishlist", views.wishlist, name="wishlist"),
-    #path("wishlist/add_to_wishlist/<int:id>", views.add_to_wishlist, name="user_wishlist"),
+    path("wishlist/add_to_wishlist/<int:id>", views.add_to_wishlist, name="user_wishlist"),
 ]
