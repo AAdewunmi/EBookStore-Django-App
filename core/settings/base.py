@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'orders',
     'mptt',
     'core',
-    'checkout'
+    'checkout',
 ]
 
 MIDDLEWARE = [
