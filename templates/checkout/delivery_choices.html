@@ -79,7 +79,7 @@
     e.preventDefault();
     $.ajax({
       type: "POST",
-      url: '{% url "checkout:basket_update_delivery" %}',
+      url: '',
       data: {
         deliveryoption: $(this).val(),
         csrfmiddlewaretoken: "{{csrf_token}}",
