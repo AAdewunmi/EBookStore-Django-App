@@ -106,3 +106,8 @@ def payment_complete(request):
 
     return JsonResponse("Payment completed!", safe=False)
 
+@login_required
+def payment_successful(request):
+    basket = Basket(request)
+    basket.clear()
+    return render(request, "checkout/payment_successful.html", {})
