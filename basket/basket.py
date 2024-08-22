@@ -1,5 +1,7 @@
 from decimal import Decimal
+
 from django.conf import settings
+
 from checkout.models import DeliveryOptions
 from store.models import Product
 
@@ -22,7 +24,7 @@ class Basket():
         """
         product_id = product.id
         if product_id not in self.basket:
-            self.basket[product_id]= {'price': str(product.regular_price), 'qty': int(qty)}
+            self.basket[product_id] = {'price': str(product.regular_price), 'qty': int(qty)}
 
         self.save()
 
@@ -48,10 +50,10 @@ class Basket():
         Get the basket data and count the qty of items
         """
         return sum(item['qty'] for item in self.basket.values())
-    
+
     def get_subtotal_price(self):
         return sum(Decimal(item["price"]) * item["qty"] for item in self.basket.values())
-    
+
     def get_delivery_price(self):
         newprice = 0.00
 
@@ -69,12 +71,12 @@ class Basket():
 
         total = subtotal + Decimal(newprice)
         return total
-    
+
     def basket_update_delivery(self, deliveryprice=0):
         subtotal = sum(Decimal(item["price"]) * item["qty"] for item in self.basket.values())
         total = subtotal + Decimal(deliveryprice)
         return total
-    
+
     def delete(self, product):
         """
         Delete item from session data
@@ -94,7 +96,7 @@ class Basket():
         if product_id in self.basket:
             self.basket[product_id]['qty'] = qty
         self.save()
-    
+
     def clear(self):
         # Remove basket from session
         del self.session[settings.BASKET_SESSION_ID]
