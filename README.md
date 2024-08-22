@@ -13,7 +13,8 @@ Book Store E Commerce App
 
 
 ----
-Stripe Payment API: Stripe payment module coded up but Stripe Payment API key not included!
+Stripe and Paypal Payment API: Stripe and PayPal payment module's have been coded up (separately) and individual SDK's installed. 
+However, you will have to generate your own API keys for both modules!
 ----
 
 
