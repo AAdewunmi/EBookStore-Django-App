@@ -100,6 +100,8 @@ class Basket():
     def clear(self):
         # Remove basket from session
         del self.session[settings.BASKET_SESSION_ID]
+        del self.session["address"]
+        del self.session["purchase"]
         self.save()
 
     def save(self):
