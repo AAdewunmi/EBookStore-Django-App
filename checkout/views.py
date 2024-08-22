@@ -1,13 +1,10 @@
-import json
-
-from account.models import Address
-from basket.basket import Basket
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
-from orders.models import Order, OrderItem
 
+from account.models import Address
+from basket.basket import Basket
 from .models import DeliveryOptions
 
 # Create your views here.
