@@ -13,8 +13,19 @@ Book Store E Commerce App
 
 
 ----
-Stripe and Paypal Payment API: Stripe and PayPal payment module's have been coded up (separately) and individual SDK's installed. 
-However, you will have to generate your own API keys for both modules!
+
+- Notes:
+
+
+1. Project Refactor (Section 9): You should start implementing the e commerce application project by working through section 9, first. You will thank me, later. 😎
+
+
+I've worked through sections 1 to 8 but have not refactored the project par Section 9.
+
+
+2. Stripe and Paypal Payment API: Stripe and PayPal payment module's have been coded up (separately) and individual SDK's installed. However, you will have to generate your own API keys for both modules!
+
+
 ----
 
 
