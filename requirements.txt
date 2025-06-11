@@ -12,7 +12,7 @@ mccabe==0.7.0
 Pillow==10.3.0
 pycodestyle==2.11.1
 pyflakes==3.1.0
-requests==2.32.2
+requests==2.32.4
 six==1.16.0
 sqlparse==0.5.0
 stripe==9.8.0
