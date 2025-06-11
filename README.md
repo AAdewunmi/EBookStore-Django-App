@@ -40,30 +40,55 @@ ii. Open project folder
 
 iii. Explore
 
+
+```
+Note:
+
+Stripe and Paypal Payment API: Stripe and PayPal payment module's have been coded up (separately)
+
+and individual SDK's installed. However, you will have to generate your own API keys for both modules.
+```
+
 😎
 
 
 ## 4. How To Use:
+
+1. **Create a virtual environment (macOS/Linux)**
+
+```bash
+# Set up virtual environment
+python3 -m venv venv
+source venv/bin/activate    # On Windows: venv\Scripts\activate
+```
+
+2. **Run Django Server**
 
 i. Run at your command terminal:
 ```
 $ python manage.py runserver
 ```
 
-ii. Paste and Go to:
-```
-http://127.0.0.1:8000/admin/
-```
+3. **Django Site Login**
 
-iii. Login:
 ```
 Username: a@a.com
 Password: djangoapp
 ```
 
-iv. Paste and Go to:
+4. **E commerce Website**
+
+i. Paste and Go:
 ```
-http://127.0.0.1:8000/
+http://127.0.0.1:8000/admin/
+```
+
+5. **Unit Testing**
+
+```
+1. pip install pytest
+2. pytest (Run from root)
+3. pytest --ds=core.settings.base
 ```
 
 ## 5. Demo
@@ -102,13 +127,9 @@ http://127.0.0.1:8000/
 
 ## 6: Product Backlog:
 
-1. Project Refactor (Section 9): I've worked through sections 1 to 8 but have not refactored the project par Section 9. **You should start implementing the e commerce application project by working through section 9, first. You will thank me, later.** 😎
+1. Project Refactor (Section 9): #TODO https://www.youtube.com/watch?v=ZE7dM0XmUoA
 
-
-2. Stripe and Paypal Payment API: Stripe and PayPal payment module's have been coded up (separately) and individual SDK's installed. However, you will have to generate your own API keys for both modules.
-
-3. Pytest Testing including Factory Boy (Section 10): I did not implement test classes. You are free to do so using the accompaning video on Youtube!
-   https://www.youtube.com/watch?v=WbZ9aIsvIBU&list=PLOLrQ9Pn6caxY4Q1U9RjO1bulQp5NDYS_&index=10
+2. Pytest Testing including Factory Boy (Section 10):  #TODO https://www.youtube.com/watch?v=WbZ9aIsvIBU&list=PLOLrQ9Pn6caxY4Q1U9RjO1bulQp5NDYS_&index=10
 
 
 ## 7. Adapted from: 
