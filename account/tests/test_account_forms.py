@@ -1,5 +1,6 @@
 import pytest
-from account.forms import RegistrationForm, UserAddressForm
+
+from account.forms import UserAddressForm
 
 
 @pytest.mark.parametrize(
